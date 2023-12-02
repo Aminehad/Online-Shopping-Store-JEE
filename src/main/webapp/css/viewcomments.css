@@ -1,0 +1,61 @@
+
+
+
+.message-container{
+	margin: 10em auto;
+	height:800px;
+    width: 80%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message{
+	width: 50%;
+	
+}
+
+.form-group + .form-group{
+    margin-top: 1em;
+}
+
+.form-group{
+    width: 100%;
+    
+    
+}
+.form-group label{
+    display: block;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 35px;
+    margin-bottom: .5em;
+    /* identical to box height */
+}
+
+.form-group input{
+    max-width: 350px;
+    min-width: 300px;
+    width: 50%;
+    height: 50px;
+    padding: 0em .8em;
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+textarea{
+    min-width: 450px;
+    height: 200px;
+    padding: 0em .8em;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    appearance: none;
+}
+

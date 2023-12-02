@@ -1,0 +1,203 @@
+<%@page import="project.ConnectionProvider"%>
+<%@page import="java.sql.*"%>
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- meta tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- css links -->
+        <link href="../css/ho-me.css" rel="stylesheet" type="text/css">
+        <link href="../css/variables.css" rel="stylesheet" type="text/css">
+        <link href="../css/header.css" rel="stylesheet" type="text/css">
+        <link href="../css/footer.css" rel="stylesheet" type="text/css">
+    	<link href="../css/cart.css" rel="stylesheet" type="text/css">
+
+        <!-- google fonts links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+        <title>Tech House | Home</title>
+    </head>
+    <% 
+		String em=session.getAttribute("email").toString();
+		System.out.print(em);
+		if("-1".equals(em)){
+			response.sendRedirect("../jsp/first-home-page.jsp");
+		}
+		%>
+    <body>
+    	<div class="cart-sidebar">
+            <div class="cart-header">
+                <img class="cart-close" src="../images/close-icone_2.jpg">
+                <div class="cart-title">Cart</div>
+            </div>
+            <div class="cart-body">
+                <div class="cart-main">
+                    <div class="cart-list">
+                       
+                    </div>
+                    <div class="cart-total">
+                        <div class="cart-total-title">Total Price</div>
+                        <div class="total-price">0$</div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="cart-btn">
+                    <a href="../jsp/checkout.jsp" class="btn-checkout">Checkout</a>
+                </div>
+            </div>
+        </div>
+        
+        <main>
+            <div class="shop-now">
+                <!-- <img src="../images/Shop Now.png" alt="shop-now" class="shop-now-img"> -->
+                <div class="shop-now-text-content">
+                    <h1 class="best-prices">Best Prices</h1>
+                    <h1 class="shop-now-title">Incredible prices<br> on All Your<br> Favourites Items</h1>
+                    <p class="shop-now-text">Get more for less on selected Brands</p>
+                    <a href="../jsp/shop-all.jsp" class ="shop-now-btn">Shop Now</a>
+                </div>
+            </div>
+
+            <div class="main-sale">
+                <div class="sale-1">
+                    <div class="sale-1-content">
+                        <p class="sale-text">Holiday Deals</p>
+                        <h1 class="sale-title">Up to<br>30% off<br></h1>
+                        <p class="sale-text">selected Smartphone Brands</p>
+                        <a href="../jsp/mobile.jsp" class ="sale-btn">Shop</a>
+                    </div>
+                </div>
+                <div class="sale-2">
+                    <div class="sale-2-content">
+                        <p class="sale-text">Just in</p>
+                        <h1 class="sale-title">Take Your<br>Sound<br>Anywhere</h1>
+                        <p class="sale-text">Top Headphone Brands</p>
+                        <a href="../jsp/wearable.jsp" class ="sale-btn">Shop</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shop-infos">
+                <div class="info">
+                    <img class="info-icon" src="../images/hand_icon.png">
+                    <p class="info-text">Hand to hand<br>pick up</p>
+                </div>
+                <div class="info">
+                    <img class="info-icon" src="../images/fluent_box-24-regular.png">
+                    <p class="info-text">Free shipping to orders<br>over 50$</p>
+                </div>
+                <div class="info">
+                    <img class="info-icon" src="../images/clarity_list-solid-badged.png">
+                    <p class="info-text">Low prices<br>guarnteed</p>
+                </div>
+                <div class="info">
+                    <img class="info-icon" src="../images/fluent_presence-available-10-regular.png">
+                    <p class="info-text">Available to<br>you 24/7</p>
+                </div>
+            </div>
+
+            <div class="best-seller">
+
+                <h1 class="bs-title">Best Sellers</h1>
+                <div class="bs-products">
+
+                    <a href="../jsp/wearable.jsp" class="bs-product">
+                        <div class="bs-sale">sale</div>
+                        <p class="bs-info">Fitboot Fitness Tracker</p>
+                        <p class="bs-price"><del>25.55$</del>18,99$</p>
+                    </a>
+
+                    <a href="../jsp/drones.jsp" class="bs-product">
+                        <div class="bs-sale">sale</div>
+                        <p class="bs-info">HKI Drone With 360<br>Camera & Controller</p>
+                        <p class="bs-price"><del>25.55$</del>18.99$</p>
+                    </a>
+
+                    <a href="../jsp/computers.jsp" class="bs-product">
+                        <div class="bs-sale">sale</div>
+                        <p class="bs-info">JP Gaming laptop<br>15.6" Laprop & 1TB</p>
+                        <p class="bs-price"><del>25.55$</del>18.99$</p>
+                    </a>
+
+                    <a href="../jsp/mobile.jsp" class="bs-product">
+                        <div class="bs-sale">sale</div>
+                        <p class="bs-info">Smart Phone X Pixel</p>
+                        <p class="bs-price"><del>25.55$</del>18.99$</p>
+                    </a>
+
+                    <a href="../jsp/wearable.jsp" class="bs-product">
+                        <div class="bs-sale">sale</div>
+                        <p class="bs-info">Ami EarBuds With<br>Noise Cancelling</p>
+                        <p class="bs-price"><del>25.55$</del>18.99$</p>
+                    </a>
+
+                </div>
+                <a href="../jsp/shop-all.jsp" class ="bs-btn">View All</a>
+
+            </div>
+            <!-- shop by category div = sbc-->
+            <div class="shop-by-cat">
+                <div class="sbc-title">Shop By Gategory</div>
+                <div class="sbc-row">
+                    <div class="sbc-row-elemnt"><img class="sbc-img" src="../images/iphone.png">Phones</div>
+                    <div class="sbc-row-elemnt"><img class="sbc-img" src="../images/Laptop.png">Computers</div>
+                    <div class="sbc-row-elemnt"><img class="sbc-img" src="../images/iphone 2.png">Tablets</div>
+                    <div class="sbc-row-elemnt"><img class="sbc-img" src="../images/fitboot.png">Wearable Tech</div>                
+                    <div class="sbc-row-elemnt"><img class="sbc-img" src="../images/earduts.png">Headphones</div>
+                    <div class="sbc-row-elemnt"><img class="sbc-img" src="../images/arcticons_bestprice.png">Best Seller</div>
+                    <div class="sbc-row-elemnt"><img class="sbc-img" src="../images/Drone.png">Drones</div>
+                    <div class="sbc-row-elemnt"><img class="sbc-img" src="../images/Tv.png">TV</div>
+                    <div class="sbc-row-elemnt"><img class="sbc-img" src="../images/ps_sale-tag.png">Sale</div>
+                </div>
+            </div>
+            <!-- Best price for Sale = bp=best price-->
+       
+            <!-- Brands -->
+            <div class="brands">
+                <div class="brands-title">Brands</div>
+                <div class="brand-div">
+                    <div class="brand"><img src="../images/huawei.png" alt="" class="b-img"></div>
+                    <div class="brand"><img src="../images/drone logo.png" alt="" class="b-img"></div>
+                    <div class="brand"><img src="../images/LG.png" alt="" class="b-img"></div>
+                    <div class="brand"><img src="../images/sound.png" alt="" class="b-img"></div>
+                    <div class="brand"><img src="../images/Hp.png" alt="" class="b-img"></div>
+                </div>
+            </div>
+            <!-- Subscribe = sub -->
+
+            
+
+
+        </main>
+          <%    
+          String email=session.getAttribute("email").toString();
+            		int z=0;
+        try{
+		Connection con=ConnectionProvider.getCon();
+		Statement st=con.createStatement();
+		ResultSet rs1=st.executeQuery("select *from admin where email='"+email+"'");
+			while(rs1.next()){z=1;}
+			if (z==1){%>
+				<script src="../js/sharingscript-admin.js"></script> <%}
+			if(z==0){%>
+				 <script src="../js/sharingscript.js"></script>  <%}
+			}
+			catch(Exception e){
+				System.out.println(e);
+			}
+                
+         %>      
+ 		<script src="../js/cartall.js"></script> 
+        <script src="https://kit.fontawesome.com/10f80d219b.js" crossorigin="anonymous"></script>
+    </body>
+</html>
